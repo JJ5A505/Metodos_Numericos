@@ -1,0 +1,27 @@
+.root {
+    -fx-background-image: url(presentacion.jpg);
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.menu-bar{
+    -fx-background-color: rgb(200,500,200);
+    -fx-font-weight: bold;
+}
+.menu:hover{
+    -fx-background-color: #000;
+    -fx-font-weight: bold;
+}
+.label:hover{
+    -fx-font-size: 15 pt;
+    -fx-text-fill: green;
+}
+.menu-item{
+    -fx-background-color: #4E9A1B;
+    -fx-border-color: #000;
+}
+.menu-item:hover{
+    -fx-background-color: #000;
+    -fx-font-weight: bold;
+}

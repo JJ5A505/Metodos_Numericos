@@ -1,0 +1,37 @@
+.button{
+    -fx-text-fill: rgb(0,0,0);
+    -fx-border-color: rgb(0,1000,1000);
+    -fx-border-radius:10;
+    -fx-background-color: linear-gradient(rgb(500,500,500),rgb(200,400,600));
+}
+.button:hover{
+    -fx-font-weight: bold;
+}
+.scene {
+    -fx-background-color: rgb(70,70,100); /* Color de fondo de la escena */
+}
+.vbox {
+    -fx-padding: 10px; /* Relleno */
+    -fx-spacing: 5px; /* Espaciado entre hijos */
+}
+.text-field {
+    -fx-background-color: rgb(900,800,00); /* Color de fondo */
+    -fx-border-color: rgb(70,70,100); /* Color del borde */
+    -fx-border-width: 1px; /* Ancho del borde */
+    -fx-padding: 5px; /* Relleno */
+    -fx-font-size: 14px; /* Tamaño de fuente */
+}
+.matrix-field {
+    -fx-font-size: 14px; /* Tamaño de fuente */
+    -fx-background-color: #e0e0e0; /* Color de fondo */
+    -fx-padding: 5px; /* Relleno */
+}
+.solution-window {
+    -fx-background-color: #f9f9f9; /* Color de fondo */
+}
+
+/* Estilos para las etiquetas de texto */
+.solution-text {
+    -fx-font-size: 14px; /* Tamaño de fuente */
+    -fx-padding: 5px; /* Relleno */
+}
