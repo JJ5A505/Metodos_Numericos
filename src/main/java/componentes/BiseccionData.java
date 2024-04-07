@@ -28,7 +28,7 @@ public class BiseccionData extends Stage {
     private Scene createScene() {
         VBox root = new VBox(10);
         root.getChildren().addAll(new Label("Resultados del Método de Bisección"));
-
+        root.setStyle("-fx-background-color: rgb(200,500,200); -fx-padding: 20px;");
         Function<Double, Double> function = evaluateFunction(functionString);
 
         double a = intervalA;
@@ -55,7 +55,9 @@ public class BiseccionData extends Stage {
 
             String result = String.format("Iteración %d: a=%.6f, b=%.6f, f(a)=%.6f, f(b)=%.6f, aproximación=%.6f, f(aprox)=%.6f, error=%.6f",
                     iteration, a, b, fa, fb, currentApproximation, fc, error);
-            root.getChildren().add(new Label(result));
+            Label label = new Label(result);
+            label.setStyle("-fx-font-family: Arial; -fx-font-size: 14px;");
+            root.getChildren().add(label);
 
             if (fa * fc < 0) {
                 b = c;
@@ -72,10 +74,13 @@ public class BiseccionData extends Stage {
         lastApproximation = currentApproximation;
 
         String finalResult = String.format("Respuesta: %.6f", lastApproximation);
-        root.getChildren().add(new Label(finalResult));
+        Label finalLabel = new Label(finalResult);
+        finalLabel.setStyle("-fx-font-family: Arial; -fx-font-size: 16px; -fx-font-weight: bold;");
+        root.getChildren().add(finalLabel);
 
         return new Scene(root, 800, 600);
     }
+
 
     private Function<Double, Double> evaluateFunction(String expression) {
         return x -> {
@@ -95,7 +100,11 @@ public class BiseccionData extends Stage {
 
     private void showError(String message) {
         VBox root = new VBox(10);
-        root.getChildren().addAll(new Label(message));
+        root.setStyle("-fx-background-color: #f0f0f0; -fx-padding: 20px;");
+        Label label = new Label(message);
+        label.setStyle("-fx-font-family: Arial; -fx-font-size: 14px; -fx-text-fill: red;");
+        root.getChildren().addAll(label);
         setScene(new Scene(root, 400, 200));
     }
 }
+
