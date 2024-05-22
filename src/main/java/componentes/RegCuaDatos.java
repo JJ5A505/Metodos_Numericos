@@ -61,7 +61,8 @@ public class RegCuaDatos extends Stage {
                 }
             }
             new RegresionCuadraticaSolver(datos);
-            mostrarAlerta(Alert.AlertType.INFORMATION, "Datos Guardados", "Los datos se han guardado correctamente.");
+            this.close();
+            //mostrarAlerta(Alert.AlertType.INFORMATION, "Datos Guardados", "Los datos se han guardado correctamente.");
         } catch (NumberFormatException e) {
             mostrarAlerta(Alert.AlertType.ERROR, "Error", "Por favor, ingrese valores numéricos válidos.");
         }

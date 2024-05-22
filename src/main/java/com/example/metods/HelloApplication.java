@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
     private BorderPane borderPane;
     private MenuBar menuBar;
     private Menu menuAbiertos,menuCerrados,menuAnalis,menuSalir;
-    private MenuItem mitBiseccion,mitSecante,mitGaussJordan,mitGaussSeidel,mitRegreionCuadratica,mitSalir;
+    private MenuItem mitBiseccion,mitSecante,mitGaussJordan,mitGaussSeidel,mitRegreionCuadratica,mitInterpolacionLineal,mitSalir;
     private void CrearUI(){
         mitBiseccion=new MenuItem("Metodo Biseccion");
         mitBiseccion.setOnAction(actionEvent -> new Biseccion());
@@ -36,8 +36,10 @@ public class HelloApplication extends Application {
         //menu para metodos de analizis numericos
         mitRegreionCuadratica=new MenuItem("Regreion Cuadratica");
         mitRegreionCuadratica.setOnAction(actionEvent -> new RegresionCuadratica());
+        mitInterpolacionLineal= new MenuItem("Interpolacion Lineal");
+        mitInterpolacionLineal.setOnAction(actionEvent -> new InterpolacionLineal());
         menuAnalis= new Menu("Analisis Numericos");
-        menuAnalis.getItems().addAll(mitRegreionCuadratica);
+        menuAnalis.getItems().addAll(mitRegreionCuadratica,mitInterpolacionLineal);
 
         mitSalir=new MenuItem("Salir");
         mitSalir.setOnAction(actionEvent -> Salir());
