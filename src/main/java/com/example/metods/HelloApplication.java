@@ -1,14 +1,11 @@
 package com.example.metods;
 
-import vistas.GaussSeidel;
-import vistas.Secante;
+import vistas.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import vistas.Biseccion;
-import vistas.GaussJordan;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -18,8 +15,8 @@ public class HelloApplication extends Application {
     private Scene escena;
     private BorderPane borderPane;
     private MenuBar menuBar;
-    private Menu menuAbiertos,menuCerrados,menuSalir;
-    private MenuItem mitBiseccion,mitSecante,mitGaussJordan,mitGaussSeidel,mitSalir;
+    private Menu menuAbiertos,menuCerrados,menuAnalis,menuSalir;
+    private MenuItem mitBiseccion,mitSecante,mitGaussJordan,mitGaussSeidel,mitRegreionCuadratica,mitSalir;
     private void CrearUI(){
         mitBiseccion=new MenuItem("Metodo Biseccion");
         mitBiseccion.setOnAction(actionEvent -> new Biseccion());
@@ -36,11 +33,17 @@ public class HelloApplication extends Application {
         menuAbiertos.getItems().addAll(mitGaussJordan,mitGaussSeidel);
         //menu para metodos abiertos
 
+        //menu para metodos de analizis numericos
+        mitRegreionCuadratica=new MenuItem("Regreion Cuadratica");
+        mitRegreionCuadratica.setOnAction(actionEvent -> new RegresionCuadratica());
+        menuAnalis= new Menu("Analisis Numericos");
+        menuAnalis.getItems().addAll(mitRegreionCuadratica);
+
         mitSalir=new MenuItem("Salir");
         mitSalir.setOnAction(actionEvent -> Salir());
         menuSalir=new Menu("Mas Opciones");
         menuSalir.getItems().add(mitSalir);
-        menuBar=new MenuBar(menuCerrados,menuAbiertos,menuSalir);
+        menuBar=new MenuBar(menuCerrados,menuAbiertos,menuAnalis,menuSalir);
     }
     @Override
     public void start(Stage stage) throws IOException {

@@ -88,7 +88,7 @@ public class Secante extends Stage {
         // Configurar la escena
         Scene scene = new Scene(root, 600, 500);
         // Configurar el escenario
-        setTitle("Método de Bisección");
+        setTitle("Método de Secante");
         setScene(scene);
         show();
     }
